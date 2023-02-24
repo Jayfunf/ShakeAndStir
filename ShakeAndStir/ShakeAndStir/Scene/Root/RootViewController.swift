@@ -14,9 +14,9 @@ class RootViewController: UIViewController {
     
     var disposeBag = DisposeBag()
     
-    func bind(reactor: RootViewReactor) {
-        
-    }
+//    func bind(reactor: RootViewReactor) {
+//        
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

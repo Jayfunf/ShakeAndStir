@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86467CFB29AF6D6C000C33EB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86467CFA29AF6D6C000C33EB /* RootView.swift */; };
 		86C15C4B29A893D700BF5561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C4A29A893D700BF5561 /* AppDelegate.swift */; };
 		86C15C4D29A893D700BF5561 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C4C29A893D700BF5561 /* SceneDelegate.swift */; };
 		86C15C5429A893DD00BF5561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86C15C5329A893DD00BF5561 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		86467CFA29AF6D6C000C33EB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		86C15C4729A893D700BF5561 /* ShakeAndStir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakeAndStir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C15C4A29A893D700BF5561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86C15C4C29A893D700BF5561 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				86C15C9029A8A57E00BF5561 /* RootViewController.swift */,
 				86C15C9329A8A59100BF5561 /* RootViewReactor.swift */,
+				86467CFA29AF6D6C000C33EB /* RootView.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				86C15C4D29A893D700BF5561 /* SceneDelegate.swift in Sources */,
 				86C15C9129A8A57E00BF5561 /* RootViewController.swift in Sources */,
 				86C15C9429A8A59100BF5561 /* RootViewReactor.swift in Sources */,
+				86467CFB29AF6D6C000C33EB /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +521,6 @@
 				INFOPLIST_FILE = ShakeAndStir/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -546,7 +549,6 @@
 				INFOPLIST_FILE = ShakeAndStir/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

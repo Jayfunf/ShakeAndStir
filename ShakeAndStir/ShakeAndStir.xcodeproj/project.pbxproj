@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		862216CC29B03CB200EFC361 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 862216CB29B03CB200EFC361 /* RxCocoa */; };
+		862216CF29B04B3400EFC361 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 862216CE29B04B3400EFC361 /* Then */; };
+		862216D229B04B7800EFC361 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 862216D129B04B7800EFC361 /* SnapKit */; };
 		86467CFB29AF6D6C000C33EB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86467CFA29AF6D6C000C33EB /* RootView.swift */; };
 		86C15C4B29A893D700BF5561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C4A29A893D700BF5561 /* AppDelegate.swift */; };
 		86C15C4D29A893D700BF5561 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C4C29A893D700BF5561 /* SceneDelegate.swift */; };
@@ -63,8 +66,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				862216CF29B04B3400EFC361 /* Then in Frameworks */,
 				86C15C8729A8A22700BF5561 /* ReactorKit in Frameworks */,
 				86C15C8C29A8A44C00BF5561 /* FirebaseFirestore in Frameworks */,
+				862216D229B04B7800EFC361 /* SnapKit in Frameworks */,
+				862216CC29B03CB200EFC361 /* RxCocoa in Frameworks */,
 				86C15C8E29A8A44C00BF5561 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +229,9 @@
 				86C15C8629A8A22700BF5561 /* ReactorKit */,
 				86C15C8B29A8A44C00BF5561 /* FirebaseFirestore */,
 				86C15C8D29A8A44C00BF5561 /* FirebaseFirestoreSwift */,
+				862216CB29B03CB200EFC361 /* RxCocoa */,
+				862216CE29B04B3400EFC361 /* Then */,
+				862216D129B04B7800EFC361 /* SnapKit */,
 			);
 			productName = ShakeAndStir;
 			productReference = 86C15C4729A893D700BF5561 /* ShakeAndStir.app */;
@@ -299,6 +308,9 @@
 			packageReferences = (
 				86C15C8529A8A22700BF5561 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				86C15C8A29A8A44C00BF5561 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				862216CA29B03CB200EFC361 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				862216CD29B04B3400EFC361 /* XCRemoteSwiftPackageReference "Then" */,
+				862216D029B04B7800EFC361 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 86C15C4829A893D700BF5561 /* Products */;
 			projectDirPath = "";
@@ -514,6 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3R7XZ6SCLH;
@@ -531,6 +544,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShakeAndStir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -542,6 +556,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3R7XZ6SCLH;
@@ -559,6 +574,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShakeAndStir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -683,6 +699,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		862216CA29B03CB200EFC361 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		862216CD29B04B3400EFC361 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		862216D029B04B7800EFC361 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		86C15C8529A8A22700BF5561 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactorKit/ReactorKit.git";
@@ -702,6 +742,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		862216CB29B03CB200EFC361 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 862216CA29B03CB200EFC361 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		862216CE29B04B3400EFC361 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 862216CD29B04B3400EFC361 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		862216D129B04B7800EFC361 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 862216D029B04B7800EFC361 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		86C15C8629A8A22700BF5561 /* ReactorKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 86C15C8529A8A22700BF5561 /* XCRemoteSwiftPackageReference "ReactorKit" */;

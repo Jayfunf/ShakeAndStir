@@ -203,7 +203,6 @@
 			children = (
 				86C15C9029A8A57E00BF5561 /* RootViewController.swift */,
 				86C15C9329A8A59100BF5561 /* RootViewReactor.swift */,
-				86467CFA29AF6D6C000C33EB /* RootView.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -356,7 +355,8 @@
 				86C15C4D29A893D700BF5561 /* SceneDelegate.swift in Sources */,
 				86C15C9129A8A57E00BF5561 /* RootViewController.swift in Sources */,
 				86C15C9429A8A59100BF5561 /* RootViewReactor.swift in Sources */,
-				86467CFB29AF6D6C000C33EB /* RootView.swift in Sources */,
+				862216DF29B17E7900EFC361 /* SettingViewController.swift in Sources */,
+				862216DC29B174A000EFC361 /* MenuViewReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

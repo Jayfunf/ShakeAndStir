@@ -11,7 +11,6 @@ import ReactorKit
 import RxCocoa
 import RxSwift
 import SnapKit
-import Then
 
 final class RootViewController: UIViewController, View {
     
@@ -29,6 +28,13 @@ final class RootViewController: UIViewController, View {
     var managerButton: UIButton = {
         let button = UIButton()
         button.setTitle("Go To ManagerMode", for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+    
+    var registerButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "person.badge.plus"), for: .normal)
         button.tintColor = .white
         return button
     }()
@@ -75,6 +81,11 @@ final class RootViewController: UIViewController, View {
             .distinctUntilChanged()
             .bind(to: testLabel.rx.text)
             .disposed(by: disposeBag)
+    }
+    
+//MARK: - Objective Functions
+    @objc private func openRegisterView() {
+        
     }
 }
 

@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		862216CC29B03CB200EFC361 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 862216CB29B03CB200EFC361 /* RxCocoa */; };
 		862216D229B04B7800EFC361 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 862216D129B04B7800EFC361 /* SnapKit */; };
-		86467CFB29AF6D6C000C33EB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86467CFA29AF6D6C000C33EB /* RootView.swift */; };
+		862216DA29B1749300EFC361 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862216D929B1749300EFC361 /* MenuViewController.swift */; };
+		862216DC29B174A000EFC361 /* MenuViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862216DB29B174A000EFC361 /* MenuViewReactor.swift */; };
+		862216DF29B17E7900EFC361 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862216DE29B17E7900EFC361 /* SettingViewController.swift */; };
+		862216E129B17E8600EFC361 /* SettingViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862216E029B17E8600EFC361 /* SettingViewReactor.swift */; };
+		862216E529B180EF00EFC361 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862216E429B180EF00EFC361 /* RegisterViewController.swift */; };
 		86C15C4B29A893D700BF5561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C4A29A893D700BF5561 /* AppDelegate.swift */; };
 		86C15C4D29A893D700BF5561 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C4C29A893D700BF5561 /* SceneDelegate.swift */; };
 		86C15C5429A893DD00BF5561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86C15C5329A893DD00BF5561 /* Assets.xcassets */; };
@@ -43,7 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		86467CFA29AF6D6C000C33EB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		862216D929B1749300EFC361 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		862216DB29B174A000EFC361 /* MenuViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewReactor.swift; sourceTree = "<group>"; };
+		862216DE29B17E7900EFC361 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		862216E029B17E8600EFC361 /* SettingViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewReactor.swift; sourceTree = "<group>"; };
+		862216E429B180EF00EFC361 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		86C15C4729A893D700BF5561 /* ShakeAndStir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakeAndStir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C15C4A29A893D700BF5561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86C15C4C29A893D700BF5561 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				862216CF29B04B3400EFC361 /* Then in Frameworks */,
 				86C15C8729A8A22700BF5561 /* ReactorKit in Frameworks */,
 				86C15C8C29A8A44C00BF5561 /* FirebaseFirestore in Frameworks */,
 				862216D229B04B7800EFC361 /* SnapKit in Frameworks */,
@@ -91,6 +98,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		862216D829B1747400EFC361 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				862216D929B1749300EFC361 /* MenuViewController.swift */,
+				862216DB29B174A000EFC361 /* MenuViewReactor.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		862216DD29B17E6300EFC361 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				862216DE29B17E7900EFC361 /* SettingViewController.swift */,
+				862216E029B17E8600EFC361 /* SettingViewReactor.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		862216E229B17FB700EFC361 /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lotties;
+			sourceTree = "<group>";
+		};
+		862216E329B180DB00EFC361 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				862216E429B180EF00EFC361 /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		86C15C3E29A893D700BF5561 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +180,9 @@
 		86C15C7A29A8982500BF5561 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				862216E329B180DB00EFC361 /* Register */,
+				862216DD29B17E6300EFC361 /* Settings */,
+				862216D829B1747400EFC361 /* Menu */,
 				86C15C8F29A8A4F200BF5561 /* Root */,
 			);
 			path = Scene;
@@ -183,6 +226,7 @@
 		86C15C8029A898C200BF5561 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				862216E229B17FB700EFC361 /* Lotties */,
 				86C15C8829A8A25400BF5561 /* GoogleService-Info.plist */,
 				86C15C5329A893DD00BF5561 /* Assets.xcassets */,
 				86C15C5529A893DD00BF5561 /* LaunchScreen.storyboard */,
@@ -351,9 +395,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				862216E529B180EF00EFC361 /* RegisterViewController.swift in Sources */,
 				86C15C4B29A893D700BF5561 /* AppDelegate.swift in Sources */,
+				862216DA29B1749300EFC361 /* MenuViewController.swift in Sources */,
 				86C15C4D29A893D700BF5561 /* SceneDelegate.swift in Sources */,
 				86C15C9129A8A57E00BF5561 /* RootViewController.swift in Sources */,
+				862216E129B17E8600EFC361 /* SettingViewReactor.swift in Sources */,
 				86C15C9429A8A59100BF5561 /* RootViewReactor.swift in Sources */,
 				862216DF29B17E7900EFC361 /* SettingViewController.swift in Sources */,
 				862216DC29B174A000EFC361 /* MenuViewReactor.swift in Sources */,

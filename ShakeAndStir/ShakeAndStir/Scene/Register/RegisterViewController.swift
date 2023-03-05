@@ -17,9 +17,6 @@ class RegisterViewController: UIViewController {
         return field
     }()
     
-    var
-    
-    
     var confirmButton: UIButton = {
         let button = UIButton()
         button.setTitle("계속해요", for: .normal)

@@ -36,6 +36,7 @@ final class RootViewController: UIViewController, View {
         let button = UIButton()
         button.setImage(UIImage(systemName: "person.badge.plus"), for: .normal)
         button.tintColor = .white
+        button.addTarget(self, action: #selector(openRegisterView), for: .touchUpInside)
         return button
     }()
     
@@ -83,9 +84,25 @@ final class RootViewController: UIViewController, View {
             .disposed(by: disposeBag)
     }
     
+    /*
+     // 모달로 띄울 ViewController 생성
+     let modalViewController = UIViewController()
+
+     // NavigationController 생성
+     let navigationController = UINavigationController(rootViewController: modalViewController)
+
+     // NavigationController를 모달로 띄우기
+     present(navigationController, animated: true, completion: nil)
+
+     */
+    
 //MARK: - Objective Functions
     @objc private func openRegisterView() {
+        let vc = RegisterViewController()
+        vc.navigationItem.title = "Register"
         
+        let navigationController = UINavigationController(rootViewController: vc)
+        self.present(navigationController, animated: true)
     }
 }
 
@@ -112,6 +129,12 @@ extension RootViewController {
         indicator.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(testLabel.snp.top).offset(-20)
+        }
+        
+        view.addSubview(registerButton)
+        registerButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(50)
         }
     }
 }

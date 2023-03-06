@@ -26,6 +26,12 @@ final class MenuViewController: UIViewController, View {
         return label
     }()
     
+    var button: UIButton = {
+        let button = UIButton()
+        button.setTitle("토스트 테스트 버튼", for: .normal)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +52,12 @@ final class MenuViewController: UIViewController, View {
         view.addSubview(makeLabel)
         makeLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
+        }
+        
+        view.addSubview(button)
+        button.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.top.equalTo(makeLabel).offset(50)
         }
     }
 }

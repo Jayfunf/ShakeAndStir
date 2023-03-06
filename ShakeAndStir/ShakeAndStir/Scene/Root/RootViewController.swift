@@ -17,7 +17,6 @@ final class RootViewController: UIViewController, View {
     typealias Reactor = RootViewReactor
     var disposeBag = DisposeBag()
     
-    
 //MARK: - UI Components
     var loginButton: UIButton = {
         let button = UIButton()
@@ -73,6 +72,16 @@ final class RootViewController: UIViewController, View {
             .disposed(by: disposeBag)
         
         reactor.state
+            .map { $0.isLoginSuccess }
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] isLoginSuccess in
+                if isLoginSuccess {
+                    self?.openMenuView()
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        reactor.state
             .map { $0.isLoading }
             .distinctUntilChanged()
             .bind(to: indicator.rx.isAnimating)
@@ -85,18 +94,6 @@ final class RootViewController: UIViewController, View {
             .disposed(by: disposeBag)
     }
     
-    /*
-     // 모달로 띄울 ViewController 생성
-     let modalViewController = UIViewController()
-
-     // NavigationController 생성
-     let navigationController = UINavigationController(rootViewController: modalViewController)
-
-     // NavigationController를 모달로 띄우기
-     present(navigationController, animated: true, completion: nil)
-
-     */
-    
 //MARK: - Objective Functions
     @objc private func openRegisterView() {
         let vc = RegisterViewController()
@@ -104,6 +101,13 @@ final class RootViewController: UIViewController, View {
         
         let navigationController = UINavigationController(rootViewController: vc)
         self.present(navigationController, animated: true)
+    }
+    
+    @objc private func openMenuView() {
+        let vc = MenuViewController()
+        vc.modalPresentationStyle = .fullScreen
+        
+        self.present(vc, animated: true)
     }
 }
 

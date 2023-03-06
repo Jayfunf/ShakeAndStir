@@ -17,6 +17,7 @@ final class RootViewController: UIViewController, View {
     typealias Reactor = RootViewReactor
     var disposeBag = DisposeBag()
     
+    
 //MARK: - UI Components
     var loginButton: UIButton = {
         let button = UIButton()

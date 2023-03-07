@@ -40,6 +40,14 @@ final class RootViewController: UIViewController, View {
         return button
     }()
     
+    var clientListButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "person.3"), for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(openClientList), for: .touchUpInside)
+        return button
+    }()
+    
     var indicator: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView()
         return view
@@ -109,6 +117,16 @@ final class RootViewController: UIViewController, View {
         
         self.present(vc, animated: true)
     }
+    
+    @objc private func openClientList() {
+        Task {
+            do {
+                print("Client List", try await FireStoreManager.shared.getUserData())
+            } catch {
+                print("openClientList Error")
+            }
+        }
+    }
 }
 
 extension RootViewController {
@@ -140,6 +158,12 @@ extension RootViewController {
         registerButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview().inset(50)
+        }
+        
+        view.addSubview(clientListButton)
+        clientListButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalTo(registerButton.snp.top).offset(-15)
         }
     }
 }

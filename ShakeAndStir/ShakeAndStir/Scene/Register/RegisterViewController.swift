@@ -24,6 +24,7 @@ class RegisterViewController: UIViewController {
         field.text = ""
         field.borderStyle = .roundedRect
         field.backgroundColor = .darkGray
+        field.autocorrectionType = .no
         
         return field
     }()
@@ -46,7 +47,11 @@ class RegisterViewController: UIViewController {
     
     var confirmButton: UIButton = {
         let button = UIButton()
-        button.setTitle("계속해요", for: .normal)
+        button.setTitle(" 가입해요 ", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
+        button.layer.cornerRadius = 10
+        button.backgroundColor = .systemBlue
+        button.addTarget(self, action: #selector(confirmButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -85,25 +90,29 @@ class RegisterViewController: UIViewController {
             $0.top.equalTo(flavorLabel.snp.bottom)
         }
         
-//        view.addSubview(closeButton)
-//        closeButton.snp.makeConstraints {
-//            $0.left.equalToSuperview().inset(15)
-//            $0.top.equalToSuperview().inset(30)
-//        }
-//
-//        view.addSubview(confirmButton)
-//        confirmButton.snp.makeConstraints {
-//            $0.centerX.equalToSuperview()
-//            $0.bottom.equalToSuperview().inset(50)
-//        }
+        view.addSubview(confirmButton)
+        confirmButton.snp.makeConstraints {
+            $0.top.equalTo(menuButton.snp.bottom).offset(30)
+            $0.centerX.equalToSuperview()
+        }
     }
     
-    @objc func backButtonTapped() {
+    @objc private func backButtonTapped() {
+        dismiss(animated: true, completion: nil) // completion으로 로티 실행
+    }
+    
+    @objc private func confirmButtonTapped() {
+        // 모든 필드를 작성 했는지 체크
+        guard let fieldText = nameField.text else { return }
+        if fieldText.isEmpty {
+            self.view.showToast(view: self.view, message: "이름을 입력하세요.")
+            return
+        }
         dismiss(animated: true, completion: nil) // completion으로 로티 실행
     }
     
     // @objc 함수에서는 enum을 파라미터로 받을 수 없음.
-    @objc func showFlavorMenu() {
+    @objc private func showFlavorMenu() {
         let flavor = "sour"
         var taste: String = ""
         switch flavor {

@@ -15,6 +15,8 @@
 		862216DF29B17E7900EFC361 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862216DE29B17E7900EFC361 /* SettingViewController.swift */; };
 		862216E129B17E8600EFC361 /* SettingViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862216E029B17E8600EFC361 /* SettingViewReactor.swift */; };
 		862216E529B180EF00EFC361 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862216E429B180EF00EFC361 /* RegisterViewController.swift */; };
+		8624A6C729B71065002936F5 /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624A6C629B71065002936F5 /* FireStoreManager.swift */; };
+		8624A6C929B71541002936F5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624A6C829B71541002936F5 /* UserModel.swift */; };
 		86C15C4B29A893D700BF5561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C4A29A893D700BF5561 /* AppDelegate.swift */; };
 		86C15C4D29A893D700BF5561 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C4C29A893D700BF5561 /* SceneDelegate.swift */; };
 		86C15C5429A893DD00BF5561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86C15C5329A893DD00BF5561 /* Assets.xcassets */; };
@@ -54,6 +56,8 @@
 		862216DE29B17E7900EFC361 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		862216E029B17E8600EFC361 /* SettingViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewReactor.swift; sourceTree = "<group>"; };
 		862216E429B180EF00EFC361 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		8624A6C629B71065002936F5 /* FireStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreManager.swift; sourceTree = "<group>"; };
+		8624A6C829B71541002936F5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		86C15C4729A893D700BF5561 /* ShakeAndStir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakeAndStir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C15C4A29A893D700BF5561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86C15C4C29A893D700BF5561 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		86C15C7C29A8989C00BF5561 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				8624A6C629B71065002936F5 /* FireStoreManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 		86C15C8129A898CC00BF5561 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8624A6C829B71541002936F5 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -402,11 +408,13 @@
 				86C15C4B29A893D700BF5561 /* AppDelegate.swift in Sources */,
 				862216DA29B1749300EFC361 /* MenuViewController.swift in Sources */,
 				86C15C4D29A893D700BF5561 /* SceneDelegate.swift in Sources */,
+				8624A6C729B71065002936F5 /* FireStoreManager.swift in Sources */,
 				86C15C9129A8A57E00BF5561 /* RootViewController.swift in Sources */,
 				862216E129B17E8600EFC361 /* SettingViewReactor.swift in Sources */,
 				86C15C9429A8A59100BF5561 /* RootViewReactor.swift in Sources */,
 				862216DF29B17E7900EFC361 /* SettingViewController.swift in Sources */,
 				860CC86D29B5C312008BFCA2 /* UIView+Extension.swift in Sources */,
+				8624A6C929B71541002936F5 /* UserModel.swift in Sources */,
 				862216DC29B174A000EFC361 /* MenuViewReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

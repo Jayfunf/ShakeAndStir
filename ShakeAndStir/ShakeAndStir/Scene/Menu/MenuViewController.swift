@@ -18,6 +18,8 @@ final class MenuViewController: UIViewController, View {
     typealias Reactor = MenuViewReactor
     var disposeBag = DisposeBag()
     
+    var isManagerMode: Bool = false
+    
 //MARK: - UI Components
     var makeLabel: UILabel = {
         let label = UILabel()
@@ -38,6 +40,8 @@ final class MenuViewController: UIViewController, View {
         view.backgroundColor = .black
         setupView()
         self.reactor = MenuViewReactor()
+        
+        print("CMh :: isManagerMode -", isManagerMode)
     }
     
     func bind(reactor: MenuViewReactor) {

@@ -79,15 +79,23 @@ final class RootViewController: UIViewController, View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+//        reactor.state
+//            .map { $0.isLoginSuccess }
+//            .distinctUntilChanged()
+//            .subscribe(onNext: { [weak self] isLoginSuccess in
+//                if isLoginSuccess {
+//                    self?.openMenuView(isManagerMode: false)
+//                }
+//            })
+//            .disposed(by: disposeBag)
+        
         reactor.state
-            .map { $0.isLoginSuccess }
+            .map { $0.isManagerMode }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] isLoginSuccess in
-                if isLoginSuccess {
-                    self?.openMenuView()
-                }
+            .subscribe(onNext: { [weak self] state in
+                print("CMH :: state - ", state)
+                self?.openMenuView(isManagerMode: state)
             })
-            .disposed(by: disposeBag)
         
         reactor.state
             .map { $0.isLoading }
@@ -102,6 +110,15 @@ final class RootViewController: UIViewController, View {
             .disposed(by: disposeBag)
     }
     
+//MARK: - Private Functions
+    private func openMenuView(isManagerMode: Bool) {
+        let vc = MenuViewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.isManagerMode = isManagerMode
+        
+        self.present(vc, animated: true)
+    }
+    
 //MARK: - Objective Functions
     @objc private func openRegisterView() {
         let vc = RegisterViewController()
@@ -109,13 +126,6 @@ final class RootViewController: UIViewController, View {
         
         let navigationController = UINavigationController(rootViewController: vc)
         self.present(navigationController, animated: true)
-    }
-    
-    @objc private func openMenuView() {
-        let vc = MenuViewController()
-        vc.modalPresentationStyle = .fullScreen
-        
-        self.present(vc, animated: true)
     }
     
     @objc private func openClientList() {

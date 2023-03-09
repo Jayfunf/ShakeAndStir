@@ -31,6 +31,8 @@
 		86C15C8E29A8A44C00BF5561 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 86C15C8D29A8A44C00BF5561 /* FirebaseFirestoreSwift */; };
 		86C15C9129A8A57E00BF5561 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C9029A8A57E00BF5561 /* RootViewController.swift */; };
 		86C15C9429A8A59100BF5561 /* RootViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C9329A8A59100BF5561 /* RootViewReactor.swift */; };
+		86E6B34429B9A5BE00B83CDF /* ManagerViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6B34329B9A5BE00B83CDF /* ManagerViewReactor.swift */; };
+		86E6B34629B9A5CA00B83CDF /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6B34529B9A5CA00B83CDF /* ManagerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		86C15C6D29A893DD00BF5561 /* ShakeAndStirUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeAndStirUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		86C15C9029A8A57E00BF5561 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		86C15C9329A8A59100BF5561 /* RootViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewReactor.swift; sourceTree = "<group>"; };
+		86E6B34329B9A5BE00B83CDF /* ManagerViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewReactor.swift; sourceTree = "<group>"; };
+		86E6B34529B9A5CA00B83CDF /* ManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,7 @@
 		86C15C7A29A8982500BF5561 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				86E6B34229B9A5AD00B83CDF /* Manager */,
 				862216E329B180DB00EFC361 /* Register */,
 				862216DD29B17E6300EFC361 /* Settings */,
 				862216D829B1747400EFC361 /* Menu */,
@@ -261,6 +266,15 @@
 				86C15C9329A8A59100BF5561 /* RootViewReactor.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		86E6B34229B9A5AD00B83CDF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				86E6B34529B9A5CA00B83CDF /* ManagerViewController.swift */,
+				86E6B34329B9A5BE00B83CDF /* ManagerViewReactor.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,9 +421,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86E6B34629B9A5CA00B83CDF /* ManagerViewController.swift in Sources */,
 				862216E529B180EF00EFC361 /* RegisterViewController.swift in Sources */,
 				86C15C4B29A893D700BF5561 /* AppDelegate.swift in Sources */,
 				862216DA29B1749300EFC361 /* MenuViewController.swift in Sources */,
+				86E6B34429B9A5BE00B83CDF /* ManagerViewReactor.swift in Sources */,
 				8624A6CF29B72740002936F5 /* CocktailModel.swift in Sources */,
 				86C15C4D29A893D700BF5561 /* SceneDelegate.swift in Sources */,
 				8624A6C729B71065002936F5 /* FireStoreManager.swift in Sources */,

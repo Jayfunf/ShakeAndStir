@@ -109,6 +109,12 @@ class RegisterViewController: UIViewController {
             return
         }
         dismiss(animated: true, completion: nil) // completion으로 로티 실행
+        
+        do {
+            try FireStoreManager.shared.setUserData(UserModel(name: fieldText, preferFlavor: ["신맛", "단맛"]))
+        } catch {
+            print("Error")
+        }
     }
     
     // @objc 함수에서는 enum을 파라미터로 받을 수 없음.

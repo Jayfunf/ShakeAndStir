@@ -40,14 +40,6 @@ final class RootViewController: UIViewController, View {
         return button
     }()
     
-    var clientListButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "person.3"), for: .normal)
-        button.tintColor = .white
-        button.addTarget(self, action: #selector(openClientList), for: .touchUpInside)
-        return button
-    }()
-    
     var indicator: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView()
         return view
@@ -58,6 +50,13 @@ final class RootViewController: UIViewController, View {
         label.text = "테스트"
         label.textColor = .white
         return label
+    }()
+    
+    var settingButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "wrench"), for: .normal)
+        button.addTarget(self, action: #selector(openSettingView), for: .touchUpInside)
+        return button
     }()
     
     override func viewDidLoad() {
@@ -79,27 +78,38 @@ final class RootViewController: UIViewController, View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+//        reactor.state
+//            .map { $0.isLoginSuccess }
+//            .distinctUntilChanged()
+//            .subscribe(onNext: { [weak self] isLoginSuccess in
+//                if isLoginSuccess {
+//                    self?.openMenuView(isManagerMode: false)
+//                }
+//            })
+//            .disposed(by: disposeBag)
+        
         reactor.state
-            .map { $0.isLoginSuccess }
+            .map { $0.isManagerMode }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] isLoginSuccess in
-                if isLoginSuccess {
-                    self?.openMenuView()
-                }
+            .subscribe(onNext: { [weak self] state in
+                print("CMH :: state - ", state)
+                self?.openMenuView(isManagerMode: state)
             })
-            .disposed(by: disposeBag)
         
         reactor.state
             .map { $0.isLoading }
             .distinctUntilChanged()
             .bind(to: indicator.rx.isAnimating)
             .disposed(by: disposeBag)
+    }
+    
+//MARK: - Private Functions
+    private func openMenuView(isManagerMode: Bool) {
+        let vc = MenuViewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.isManagerMode = isManagerMode
         
-        reactor.state
-            .map { String($0.isLoading)}
-            .distinctUntilChanged()
-            .bind(to: testLabel.rx.text)
-            .disposed(by: disposeBag)
+        self.present(vc, animated: true)
     }
     
 //MARK: - Objective Functions
@@ -111,21 +121,11 @@ final class RootViewController: UIViewController, View {
         self.present(navigationController, animated: true)
     }
     
-    @objc private func openMenuView() {
-        let vc = MenuViewController()
+    @objc private func openSettingView() {
+        let vc = SettingViewController()
         vc.modalPresentationStyle = .fullScreen
         
         self.present(vc, animated: true)
-    }
-    
-    @objc private func openClientList() {
-        Task {
-            do {
-                print("Client List", try await FireStoreManager.shared.getUserData())
-            } catch {
-                print("openClientList Error")
-            }
-        }
     }
 }
 
@@ -160,10 +160,10 @@ extension RootViewController {
             $0.bottom.equalToSuperview().inset(50)
         }
         
-        view.addSubview(clientListButton)
-        clientListButton.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.bottom.equalTo(registerButton.snp.top).offset(-15)
+        view.addSubview(settingButton)
+        settingButton.snp.makeConstraints {
+            $0.trailing.equalTo(view.safeAreaLayoutGuide )
+            $0.top.equalTo(view.safeAreaLayoutGuide )
         }
     }
 }

@@ -31,6 +31,11 @@
 		86C15C8E29A8A44C00BF5561 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 86C15C8D29A8A44C00BF5561 /* FirebaseFirestoreSwift */; };
 		86C15C9129A8A57E00BF5561 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C9029A8A57E00BF5561 /* RootViewController.swift */; };
 		86C15C9429A8A59100BF5561 /* RootViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C9329A8A59100BF5561 /* RootViewReactor.swift */; };
+		86E6B34429B9A5BE00B83CDF /* ManagerViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6B34329B9A5BE00B83CDF /* ManagerViewReactor.swift */; };
+		86E6B34629B9A5CA00B83CDF /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6B34529B9A5CA00B83CDF /* ManagerViewController.swift */; };
+		86F22DC429BC889A0099007A /* GlobalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F22DC329BC889A0099007A /* GlobalManager.swift */; };
+		86F22DC629BCA3F10099007A /* wine_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 86F22DC529BCA3F10099007A /* wine_lottie.json */; };
+		86F22DC929BCA4430099007A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 86F22DC829BCA4430099007A /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +79,10 @@
 		86C15C6D29A893DD00BF5561 /* ShakeAndStirUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeAndStirUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		86C15C9029A8A57E00BF5561 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		86C15C9329A8A59100BF5561 /* RootViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewReactor.swift; sourceTree = "<group>"; };
+		86E6B34329B9A5BE00B83CDF /* ManagerViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewReactor.swift; sourceTree = "<group>"; };
+		86E6B34529B9A5CA00B83CDF /* ManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
+		86F22DC329BC889A0099007A /* GlobalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalManager.swift; sourceTree = "<group>"; };
+		86F22DC529BCA3F10099007A /* wine_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wine_lottie.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +95,7 @@
 				862216D229B04B7800EFC361 /* SnapKit in Frameworks */,
 				862216CC29B03CB200EFC361 /* RxCocoa in Frameworks */,
 				86C15C8E29A8A44C00BF5561 /* FirebaseFirestoreSwift in Frameworks */,
+				86F22DC929BCA4430099007A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +137,7 @@
 		862216E229B17FB700EFC361 /* Lotties */ = {
 			isa = PBXGroup;
 			children = (
+				86F22DC529BCA3F10099007A /* wine_lottie.json */,
 			);
 			path = Lotties;
 			sourceTree = "<group>";
@@ -188,6 +199,7 @@
 		86C15C7A29A8982500BF5561 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				86E6B34229B9A5AD00B83CDF /* Manager */,
 				862216E329B180DB00EFC361 /* Register */,
 				862216DD29B17E6300EFC361 /* Settings */,
 				862216D829B1747400EFC361 /* Menu */,
@@ -212,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				8624A6C629B71065002936F5 /* FireStoreManager.swift */,
+				86F22DC329BC889A0099007A /* GlobalManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -263,6 +276,15 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		86E6B34229B9A5AD00B83CDF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				86E6B34529B9A5CA00B83CDF /* ManagerViewController.swift */,
+				86E6B34329B9A5BE00B83CDF /* ManagerViewReactor.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -285,6 +307,7 @@
 				86C15C8D29A8A44C00BF5561 /* FirebaseFirestoreSwift */,
 				862216CB29B03CB200EFC361 /* RxCocoa */,
 				862216D129B04B7800EFC361 /* SnapKit */,
+				86F22DC829BCA4430099007A /* Lottie */,
 			);
 			productName = ShakeAndStir;
 			productReference = 86C15C4729A893D700BF5561 /* ShakeAndStir.app */;
@@ -363,6 +386,7 @@
 				86C15C8A29A8A44C00BF5561 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				862216CA29B03CB200EFC361 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				862216D029B04B7800EFC361 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				86F22DC729BCA4430099007A /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 86C15C4829A893D700BF5561 /* Products */;
 			projectDirPath = "";
@@ -383,6 +407,7 @@
 				86C15C5729A893DD00BF5561 /* LaunchScreen.storyboard in Resources */,
 				86C15C5429A893DD00BF5561 /* Assets.xcassets in Resources */,
 				8624A6CD29B72147002936F5 /* GoogleService-Info.plist in Resources */,
+				86F22DC629BCA3F10099007A /* wine_lottie.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,14 +432,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86E6B34629B9A5CA00B83CDF /* ManagerViewController.swift in Sources */,
 				862216E529B180EF00EFC361 /* RegisterViewController.swift in Sources */,
 				86C15C4B29A893D700BF5561 /* AppDelegate.swift in Sources */,
 				862216DA29B1749300EFC361 /* MenuViewController.swift in Sources */,
+				86E6B34429B9A5BE00B83CDF /* ManagerViewReactor.swift in Sources */,
 				8624A6CF29B72740002936F5 /* CocktailModel.swift in Sources */,
 				86C15C4D29A893D700BF5561 /* SceneDelegate.swift in Sources */,
 				8624A6C729B71065002936F5 /* FireStoreManager.swift in Sources */,
 				86C15C9129A8A57E00BF5561 /* RootViewController.swift in Sources */,
 				862216E129B17E8600EFC361 /* SettingViewReactor.swift in Sources */,
+				86F22DC429BC889A0099007A /* GlobalManager.swift in Sources */,
 				86C15C9429A8A59100BF5561 /* RootViewReactor.swift in Sources */,
 				862216DF29B17E7900EFC361 /* SettingViewController.swift in Sources */,
 				860CC86D29B5C312008BFCA2 /* UIView+Extension.swift in Sources */,
@@ -791,6 +819,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		86F22DC729BCA4430099007A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -818,6 +854,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 86C15C8A29A8A44C00BF5561 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		86F22DC829BCA4430099007A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86F22DC729BCA4430099007A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -15,8 +15,7 @@ class RootViewReactor: Reactor {
     }
     
     enum Mutation {
-        case openMainView
-        case openManagerView
+        case openManagerView(Bool)
         case setLoading(Bool)
     }
     
@@ -33,19 +32,18 @@ class RootViewReactor: Reactor {
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
-        print("CMH :: Mutate")
         switch action {
         case .clickToStart:
             return Observable.concat([
                 Observable.just(Mutation.setLoading(true)),
-                Observable.just(Mutation.openMainView)
+                Observable.just(Mutation.openManagerView(false))
                     .delay(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance),
                 Observable.just(Mutation.setLoading(false))
             ])
         case .clickToManage:
             return Observable.concat([
                 Observable.just(Mutation.setLoading(true)),
-                Observable.just(Mutation.openManagerView)
+                Observable.just(Mutation.openManagerView(true))
                     .delay(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance),
                 Observable.just(Mutation.setLoading(false))
             ])
@@ -53,15 +51,12 @@ class RootViewReactor: Reactor {
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
-        print("CMH :: Reduce")
         var newState = state
         switch mutation {
         case let .setLoading(isLoading):
             newState.isLoading = isLoading
-        case .openManagerView:
-            newState.isManagerMode = true
-        case .openMainView:
-            newState.isLoginSuccess = true
+        case let .openManagerView(isManagerView):
+            newState.isManagerMode = isManagerView
         }
         
         return newState

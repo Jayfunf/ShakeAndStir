@@ -18,6 +18,8 @@ final class MenuViewController: UIViewController, View {
     typealias Reactor = MenuViewReactor
     var disposeBag = DisposeBag()
     
+    var isManagerMode: Bool = false
+    
 //MARK: - UI Components
     var makeLabel: UILabel = {
         let label = UILabel()
@@ -29,6 +31,7 @@ final class MenuViewController: UIViewController, View {
     var button: UIButton = {
         let button = UIButton()
         button.setTitle("토스트 테스트 버튼", for: .normal)
+        button.addTarget(self, action: #selector(testbutton), for: .touchUpInside)
         return button
     }()
     
@@ -38,6 +41,8 @@ final class MenuViewController: UIViewController, View {
         view.backgroundColor = .black
         setupView()
         self.reactor = MenuViewReactor()
+        
+        print("CMh :: isManagerMode -", isManagerMode)
     }
     
     func bind(reactor: MenuViewReactor) {
@@ -59,5 +64,9 @@ final class MenuViewController: UIViewController, View {
             $0.center.equalToSuperview()
             $0.top.equalTo(makeLabel).offset(50)
         }
+    }
+    
+    @objc func testbutton() {
+        dismiss(animated: true, completion: nil) // completion으로 로티 실행
     }
 }

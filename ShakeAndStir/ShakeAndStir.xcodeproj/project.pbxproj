@@ -35,6 +35,7 @@
 		86E6B34629B9A5CA00B83CDF /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6B34529B9A5CA00B83CDF /* ManagerViewController.swift */; };
 		86F22DC429BC889A0099007A /* GlobalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F22DC329BC889A0099007A /* GlobalManager.swift */; };
 		86F22DC629BCA3F10099007A /* wine_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 86F22DC529BCA3F10099007A /* wine_lottie.json */; };
+		86F22DC929BCA4430099007A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 86F22DC829BCA4430099007A /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 				862216D229B04B7800EFC361 /* SnapKit in Frameworks */,
 				862216CC29B03CB200EFC361 /* RxCocoa in Frameworks */,
 				86C15C8E29A8A44C00BF5561 /* FirebaseFirestoreSwift in Frameworks */,
+				86F22DC929BCA4430099007A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +307,7 @@
 				86C15C8D29A8A44C00BF5561 /* FirebaseFirestoreSwift */,
 				862216CB29B03CB200EFC361 /* RxCocoa */,
 				862216D129B04B7800EFC361 /* SnapKit */,
+				86F22DC829BCA4430099007A /* Lottie */,
 			);
 			productName = ShakeAndStir;
 			productReference = 86C15C4729A893D700BF5561 /* ShakeAndStir.app */;
@@ -383,6 +386,7 @@
 				86C15C8A29A8A44C00BF5561 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				862216CA29B03CB200EFC361 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				862216D029B04B7800EFC361 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				86F22DC729BCA4430099007A /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 86C15C4829A893D700BF5561 /* Products */;
 			projectDirPath = "";
@@ -815,6 +819,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		86F22DC729BCA4430099007A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -842,6 +854,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 86C15C8A29A8A44C00BF5561 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		86F22DC829BCA4430099007A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86F22DC729BCA4430099007A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

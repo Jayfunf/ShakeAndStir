@@ -31,6 +31,7 @@ final class MenuViewController: UIViewController, View {
     var button: UIButton = {
         let button = UIButton()
         button.setTitle("토스트 테스트 버튼", for: .normal)
+        button.addTarget(self, action: #selector(testbutton), for: .touchUpInside)
         return button
     }()
     
@@ -63,5 +64,9 @@ final class MenuViewController: UIViewController, View {
             $0.center.equalToSuperview()
             $0.top.equalTo(makeLabel).offset(50)
         }
+    }
+    
+    @objc func testbutton() {
+        dismiss(animated: true, completion: nil) // completion으로 로티 실행
     }
 }

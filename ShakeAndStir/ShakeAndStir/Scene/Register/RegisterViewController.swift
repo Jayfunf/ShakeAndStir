@@ -8,6 +8,7 @@
 import UIKit
 
 import SnapKit
+import Lottie
 
 class RegisterViewController: UIViewController {
     
@@ -47,7 +48,7 @@ class RegisterViewController: UIViewController {
     
     var confirmButton: UIButton = {
         let button = UIButton()
-        button.setTitle(" 가입해요 ", for: .normal)
+        button.setTitle("  가입해요  ", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         button.layer.cornerRadius = 10
         button.backgroundColor = .systemBlue
@@ -108,12 +109,27 @@ class RegisterViewController: UIViewController {
             self.view.showToast(view: self.view, message: "이름을 입력하세요.")
             return
         }
-        dismiss(animated: true, completion: nil) // completion으로 로티 실행
         
+        nameField.resignFirstResponder() // 가입해오 버튼 클릭 시 자동으로 키보드 내려감
+        
+        let wineLottieView: LottieAnimationView = .init(name: "wine_lottie")
+        wineLottieView.loopMode = .playOnce
         do {
             try FireStoreManager.shared.setUserData(UserModel(name: fieldText, preferFlavor: ["신맛", "단맛"]))
+            view.addSubview(wineLottieView)
+            wineLottieView.snp.makeConstraints {
+                $0.centerX.equalToSuperview()
+                $0.centerY.equalToSuperview().offset(-50)
+                $0.width.height.equalTo(300)
+            }
+            wineLottieView.play()
         } catch {
             print("Error")
+        }
+        
+        // wine_lottie 애니메이션이 종료되면 화면을 닫음
+        wineLottieView.play { [weak self] _ in
+            self?.dismiss(animated: true, completion: nil)
         }
     }
     

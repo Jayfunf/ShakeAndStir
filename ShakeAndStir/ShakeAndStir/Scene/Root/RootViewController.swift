@@ -60,6 +60,13 @@ final class RootViewController: UIViewController, View {
         return label
     }()
     
+    var settingButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "wrench"), for: .normal)
+        button.addTarget(self, action: #selector(openSettingView), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -102,12 +109,6 @@ final class RootViewController: UIViewController, View {
             .distinctUntilChanged()
             .bind(to: indicator.rx.isAnimating)
             .disposed(by: disposeBag)
-        
-        reactor.state
-            .map { String($0.isLoading)}
-            .distinctUntilChanged()
-            .bind(to: testLabel.rx.text)
-            .disposed(by: disposeBag)
     }
     
 //MARK: - Private Functions
@@ -136,6 +137,13 @@ final class RootViewController: UIViewController, View {
                 print("openClientList Error")
             }
         }
+    }
+    
+    @objc private func openSettingView() {
+        let vc = SettingViewController()
+        vc.modalPresentationStyle = .fullScreen
+        
+        self.present(vc, animated: true)
     }
 }
 
@@ -174,6 +182,12 @@ extension RootViewController {
         clientListButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(registerButton.snp.top).offset(-15)
+        }
+        
+        view.addSubview(settingButton)
+        settingButton.snp.makeConstraints {
+            $0.trailing.equalTo(view.safeAreaLayoutGuide )
+            $0.top.equalTo(view.safeAreaLayoutGuide )
         }
     }
 }

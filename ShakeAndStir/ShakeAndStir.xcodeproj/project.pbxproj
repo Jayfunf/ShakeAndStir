@@ -33,6 +33,7 @@
 		86C15C9429A8A59100BF5561 /* RootViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C9329A8A59100BF5561 /* RootViewReactor.swift */; };
 		86E6B34429B9A5BE00B83CDF /* ManagerViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6B34329B9A5BE00B83CDF /* ManagerViewReactor.swift */; };
 		86E6B34629B9A5CA00B83CDF /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6B34529B9A5CA00B83CDF /* ManagerViewController.swift */; };
+		86F22DC429BC889A0099007A /* GlobalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F22DC329BC889A0099007A /* GlobalManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		86C15C9329A8A59100BF5561 /* RootViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewReactor.swift; sourceTree = "<group>"; };
 		86E6B34329B9A5BE00B83CDF /* ManagerViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewReactor.swift; sourceTree = "<group>"; };
 		86E6B34529B9A5CA00B83CDF /* ManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
+		86F22DC329BC889A0099007A /* GlobalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				8624A6C629B71065002936F5 /* FireStoreManager.swift */,
+				86F22DC329BC889A0099007A /* GlobalManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				8624A6C729B71065002936F5 /* FireStoreManager.swift in Sources */,
 				86C15C9129A8A57E00BF5561 /* RootViewController.swift in Sources */,
 				862216E129B17E8600EFC361 /* SettingViewReactor.swift in Sources */,
+				86F22DC429BC889A0099007A /* GlobalManager.swift in Sources */,
 				86C15C9429A8A59100BF5561 /* RootViewReactor.swift in Sources */,
 				862216DF29B17E7900EFC361 /* SettingViewController.swift in Sources */,
 				860CC86D29B5C312008BFCA2 /* UIView+Extension.swift in Sources */,

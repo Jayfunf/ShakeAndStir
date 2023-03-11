@@ -64,16 +64,21 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("선택된 셀의 인덱스: \(indexPath.row)")
-        
-        // 선택된 셀에 대한 동작 수행
-        switch indexPath.row {
-//        case 0:
-//            print("1")
-//            break
-        case 1:
-            print("1")
+        switch indexPath.section {
+        case 0:
+            print("관리자모드")
             break
+        case 1:
+            print("기록")
+            switch indexPath.row {
+            case 0:
+                print("히스토리 보기")
+            case 1:
+                print("유저 보기")
+                openUserList()
+            default:
+                break
+            }
         default:
             break
         }
@@ -90,10 +95,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
         if indexPath.section == 0 {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
             cell.contentView.addSubview(managerModeIcon)
             managerModeIcon.snp.makeConstraints {
@@ -129,6 +131,14 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            return false // 관리자 모드 셀 클릭 막기
+        } else {
+            return true
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2 // 섹션 2개
     }
@@ -143,6 +153,16 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @objc private func toggleMode() {
         GlobalManager.shared.toggleManagerMode()
+    }
+    
+    @objc private func openUserList() {
+        Task {
+            do {
+                print("Client List", try await FireStoreManager.shared.getUserData())
+            } catch {
+                print("openClientList Error")
+            }
+        }
     }
 }
 

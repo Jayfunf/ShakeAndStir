@@ -31,6 +31,7 @@
 		86C15C8E29A8A44C00BF5561 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 86C15C8D29A8A44C00BF5561 /* FirebaseFirestoreSwift */; };
 		86C15C9129A8A57E00BF5561 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C9029A8A57E00BF5561 /* RootViewController.swift */; };
 		86C15C9429A8A59100BF5561 /* RootViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C15C9329A8A59100BF5561 /* RootViewReactor.swift */; };
+		86CE8D3629BF14AE002E3FCE /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE8D3529BF14AE002E3FCE /* MenuDetailViewController.swift */; };
 		86E6B34429B9A5BE00B83CDF /* ManagerViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6B34329B9A5BE00B83CDF /* ManagerViewReactor.swift */; };
 		86E6B34629B9A5CA00B83CDF /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6B34529B9A5CA00B83CDF /* ManagerViewController.swift */; };
 		86F22DC429BC889A0099007A /* GlobalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F22DC329BC889A0099007A /* GlobalManager.swift */; };
@@ -79,6 +80,7 @@
 		86C15C6D29A893DD00BF5561 /* ShakeAndStirUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeAndStirUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		86C15C9029A8A57E00BF5561 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		86C15C9329A8A59100BF5561 /* RootViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewReactor.swift; sourceTree = "<group>"; };
+		86CE8D3529BF14AE002E3FCE /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		86E6B34329B9A5BE00B83CDF /* ManagerViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewReactor.swift; sourceTree = "<group>"; };
 		86E6B34529B9A5CA00B83CDF /* ManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
 		86F22DC329BC889A0099007A /* GlobalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalManager.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				862216D929B1749300EFC361 /* MenuViewController.swift */,
 				862216DB29B174A000EFC361 /* MenuViewReactor.swift */,
+				86CE8D3529BF14AE002E3FCE /* MenuDetailViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 			files = (
 				86E6B34629B9A5CA00B83CDF /* ManagerViewController.swift in Sources */,
 				862216E529B180EF00EFC361 /* RegisterViewController.swift in Sources */,
+				86CE8D3629BF14AE002E3FCE /* MenuDetailViewController.swift in Sources */,
 				86C15C4B29A893D700BF5561 /* AppDelegate.swift in Sources */,
 				862216DA29B1749300EFC361 /* MenuViewController.swift in Sources */,
 				86E6B34429B9A5BE00B83CDF /* ManagerViewReactor.swift in Sources */,

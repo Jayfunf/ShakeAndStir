@@ -38,7 +38,7 @@ final class FireStoreManager {
     
     func loadCockTailList() async throws -> [CocktailModel] {
         let collectionPath = "\(CollectionPaths.Cocktails)"
-        let result = try await document.collection(collectionPath).order(by: "name", descending: true).getDocuments()
+        let result = try await document.collection(collectionPath).getDocuments()
         let data = try result.documents.map { snapshot in
             try snapshot.data(as: CocktailModel.self)
         }

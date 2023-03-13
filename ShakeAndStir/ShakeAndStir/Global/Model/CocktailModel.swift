@@ -27,4 +27,18 @@ struct CocktailModel: Codable {
         self.price = price
     }
     
+    private enum CodingKeys: String, CodingKey {
+        case name
+        case base
+        case taste
+        case price
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        name = try values.decode(String.self, forKey: .name)
+        base = try values.decode([String].self, forKey: .base)
+        taste = try values.decode([String].self, forKey: .taste)
+        price = try values.decode(String.self, forKey: .price)
+    }
 }

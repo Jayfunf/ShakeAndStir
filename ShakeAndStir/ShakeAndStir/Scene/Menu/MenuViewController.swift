@@ -24,18 +24,28 @@ final class MenuViewController: UIViewController, View, UITableViewDataSource, U
     var cocktailModel: [CocktailModel] = []
     var cocktailHeaders: [String] = []
     
-    //MARK: - UI Components
-    var makeLabel: UILabel = {
-        let label = UILabel()
-        label.text = ""
-        label.textColor = .white
-        return label
+//MARK: - UI Components
+    var backButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(backToMenu), for: .touchUpInside)
+        return button
     }()
     
-    var button: UIButton = {
+    var plusButton: UIButton = {
         let button = UIButton()
-        button.setTitle("토스트 테스트 버튼", for: .normal)
-        button.addTarget(self, action: #selector(testbutton), for: .touchUpInside)
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(addNewMenu), for: .touchUpInside)
+        return button
+    }()
+    
+    var deleteButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "trash.fill"), for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(deleteMenu), for: .touchUpInside)
         return button
     }()
     
@@ -43,7 +53,6 @@ final class MenuViewController: UIViewController, View, UITableViewDataSource, U
         super.viewDidLoad()
         
         view.backgroundColor = .black
-        setupView()
         self.reactor = MenuViewReactor()
         
         print("CMh :: isManagerMode -", isManagerMode)
@@ -61,41 +70,48 @@ final class MenuViewController: UIViewController, View, UITableViewDataSource, U
         tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints {
-            $0.top.equalTo(button.snp.bottom).offset(20)
-            $0.left.right.bottom.equalToSuperview()
-        }
+        
+        setupView()
     }
     
     deinit {
         print("Deinit - <MenuViewController>")
     }
     
+//MARK: - Functions
     func bind(reactor: MenuViewReactor) {
-        reactor.state
-            .map { String($0.isTestValue )}
-            .distinctUntilChanged()
-            .bind(to: makeLabel.rx.text)
-            .disposed(by: disposeBag)
+//        reactor.state
+//            .map { String($0.isTestValue )}
+//            .distinctUntilChanged()
+//            .bind(to: makeLabel.rx.text)
+//            .disposed(by: disposeBag)
     }
     
     func setupView() {
-        view.addSubview(makeLabel)
-        makeLabel.snp.makeConstraints {
-            $0.center.equalToSuperview()
+        view.addSubview(backButton)
+        backButton.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(20)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
         }
         
-        view.addSubview(button)
-        button.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.top.equalTo(makeLabel).offset(50)
+        view.addSubview(tableView)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.snp.makeConstraints {
+            $0.top.equalTo(backButton.snp.bottom).offset(15)
+            $0.left.right.bottom.equalToSuperview()
         }
-    }
-    
-    @objc func testbutton() {
-        dismiss(animated: true, completion: nil) // completion으로 로티 실행
+        
+        view.addSubview(plusButton)
+        plusButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(20)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        view.addSubview(deleteButton)
+        deleteButton.snp.makeConstraints {
+            $0.trailing.equalTo(plusButton.snp.leading).offset(-20)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -132,5 +148,27 @@ final class MenuViewController: UIViewController, View, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return cocktailHeaders[section]
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("indexPath - ", indexPath.section)
+    }
+    
+//MARK: - Objc Functions
+    @objc private func backToMenu() {
+        dismiss(animated: true)
+    }
+    
+    @objc private func addNewMenu() {
+        
+        let vc = MenuAddViewController()
+        vc.navigationItem.title = "메뉴 추가"
+        
+        let navigationController = UINavigationController(rootViewController: vc)
+        self.present(navigationController, animated: true)
+    }
+    
+    @objc private func deleteMenu() {
+        view.showToast(view: self.view, message: "삭제테스트")
     }
 }

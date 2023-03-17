@@ -13,7 +13,7 @@ final class FireStoreManager {
     static var shared = FireStoreManager()
     
     enum CollectionPaths: String {
-        case Users, Cocktails
+        case Users, Cocktails, Histories
     }
     
     let document = Firestore.firestore()
@@ -30,6 +30,13 @@ final class FireStoreManager {
         let collectionPath = "\(CollectionPaths.Cocktails)"
         
         try document.collection(collectionPath).document(cocktail).setData(from: model)
+    }
+    
+    func setHistory(time: String, model: HistoryModel) throws {
+        let time: String = time
+        let collectionPath = "\(CollectionPaths.Histories)"
+        
+        try document.collection(collectionPath).document(time).setData(from: model)
     }
     
     func getUserData() async throws -> [UserModel] {

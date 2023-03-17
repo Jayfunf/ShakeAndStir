@@ -154,17 +154,24 @@ final class MenuViewController: UIViewController, View, UITableViewDataSource, U
         
         return uniquSections.count
     }
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return cocktailHeaders.count
-//    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return cocktailHeaders[section]
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("indexPath - ", indexPath.section)
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        let cellLabel = cell?.textLabel?.text ?? "error"
+        print("cell - ", cellLabel)
+        cocktailModel.forEach {
+            if $0.name == cellLabel {
+                let vc = MenuDetailViewController(cocktail: $0)
+                self.present(vc, animated: true)
+            } else {
+                view.showToast(view: self.view, message: "Error")
+            }
+        }
     }
     
 

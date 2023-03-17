@@ -65,6 +65,14 @@ final class RootViewController: UIViewController, View {
         view.backgroundColor = .black
         setupView()
         self.reactor = RootViewReactor()
+        
+        Task {
+            do {
+                GlobalManager.shared.registedUsers = try await FireStoreManager.shared.getUserData()
+            } catch {
+                print("openClientList Error")
+            }
+        }
     }
 
     func bind(reactor: RootViewReactor) {

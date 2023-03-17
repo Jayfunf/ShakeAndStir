@@ -10,6 +10,7 @@ import Foundation
 class GlobalManager {
     public static var shared = GlobalManager()
     var managerMode: Bool = false
+    var registedUsers: [UserModel] = []
     
     public func toggleManagerMode() {
         print("Current ManagerMode1", managerMode)

@@ -115,6 +115,14 @@ class RegisterViewController: UIViewController {
         } catch {
             print("Error")
         }
+        
+        Task {
+            do {
+                GlobalManager.shared.registedUsers = try await FireStoreManager.shared.getUserData()
+            } catch {
+                print("openClientList Error")
+            }
+        }
     }
     
     // @objc 함수에서는 enum을 파라미터로 받을 수 없음.

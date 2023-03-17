@@ -72,6 +72,7 @@ final class MenuViewController: UIViewController, View, UITableViewDataSource, U
         tableView.dataSource = self
         
         setupView()
+        checkManagerMode()
     }
     
     deinit {
@@ -111,6 +112,15 @@ final class MenuViewController: UIViewController, View, UITableViewDataSource, U
         deleteButton.snp.makeConstraints {
             $0.trailing.equalTo(plusButton.snp.leading).offset(-20)
             $0.top.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+    
+    func checkManagerMode() {
+        if !GlobalManager.shared.managerMode {
+            plusButton.isHidden = true
+            plusButton.isEnabled = false
+            deleteButton.isHidden = true
+            deleteButton.isEnabled = false
         }
     }
     

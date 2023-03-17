@@ -125,17 +125,16 @@ final class MenuViewController: UIViewController, View, UITableViewDataSource, U
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cocktailModel.count
+        let base = cocktailHeaders[section]
+        return cocktailModel.filter { $0.base.first == base }.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let cocktail = cocktailModel[indexPath.row]
-        cocktail.base.forEach {
-            if $0 == cocktailHeaders[indexPath.section] {
-                cell.textLabel?.text = cocktail.name
-            }
-        }
+        let base = cocktailHeaders[indexPath.section]
+        let filteredCocktails = cocktailModel.filter { $0.base.first == base }
+        let cocktail = filteredCocktails[indexPath.row]
+        cell.textLabel?.text = cocktail.name
         return cell
     }
     
@@ -155,6 +154,10 @@ final class MenuViewController: UIViewController, View, UITableViewDataSource, U
         
         return uniquSections.count
     }
+//
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return cocktailHeaders.count
+//    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return cocktailHeaders[section]
@@ -163,6 +166,8 @@ final class MenuViewController: UIViewController, View, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("indexPath - ", indexPath.section)
     }
+    
+
     
 //MARK: - Objc Functions
     @objc private func backToMenu() {

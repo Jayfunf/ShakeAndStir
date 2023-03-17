@@ -20,10 +20,16 @@ final class FireStoreManager {
     
     func setUserData(_ model: UserModel) throws {
         let userName: String = model.name
-        print(CollectionPaths.Users)
         let collectionPath = "\(CollectionPaths.Users)"
         
         try document.collection(collectionPath).document(userName).setData(from: model)
+    }
+    
+    func setCocktailData(_ model: CocktailModel) throws {
+        let cocktail: String = model.name
+        let collectionPath = "\(CollectionPaths.Cocktails)"
+        
+        try document.collection(collectionPath).document(cocktail).setData(from: model)
     }
     
     func getUserData() async throws -> [UserModel] {
